@@ -28,6 +28,8 @@ RUN yum install -y java-1.8.0-openjdk-devel git wget unzip which && \
     yum autoremove -y java-1.8.0-openjdk-devel git wget unzip which && \
     yum clean all
 
+ADD logback.xml /kafka-manager-${KM_VERSION}}/conf/logback.yml
+
 WORKDIR /kafka-manager-${KM_VERSION}
 
 EXPOSE 9000
